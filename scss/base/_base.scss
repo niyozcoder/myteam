@@ -102,6 +102,7 @@ header {
 .intro__words {
   margin-top: 5.7rem;
   display: flex;
+  justify-content: space-between;
 }
 
 .intro__words-main {
@@ -115,7 +116,6 @@ header {
 }
 
 .intro__words-info {
-  margin-left: auto;
   width: 44.5rem;
   font-size: 1.8rem;
   padding-top: 13rem;
@@ -256,6 +256,7 @@ header {
 .result__list {
   @include reset-list;
   display: flex;
+  justify-content: space-between;
   padding-top: 9.2rem;
   text-align: center;
 }
@@ -263,7 +264,6 @@ header {
 .result__list-item {
   display: flex;
   flex-direction: column;
-  margin-right: 3rem;
   position: relative;
 
   &::before {
@@ -278,9 +278,6 @@ header {
   }
 
 
-  &:last-child {
-    margin-right: 0;
-  }
 }
 
 .result__list-quote {

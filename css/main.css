@@ -132,6 +132,9 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .intro__words-main {
@@ -145,7 +148,6 @@ header {
 }
 
 .intro__words-info {
-  margin-left: auto;
   width: 44.5rem;
   font-size: 1.8rem;
   padding-top: 13rem;
@@ -299,6 +301,9 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-top: 9.2rem;
   text-align: center;
 }
@@ -311,7 +316,6 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-right: 3rem;
   position: relative;
 }
 
@@ -324,10 +328,6 @@ header {
   left: 14rem;
   background: url("../img/quote.png");
   z-index: -1;
-}
-
-.result__list-item:last-child {
-  margin-right: 0;
 }
 
 .result__list-quote {
