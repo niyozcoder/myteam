@@ -1,0 +1,423 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  color: #fff;
+  background-color: #014E56;
+  font-size: 1.6rem;
+  font-family: 'Livvic', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.intro {
+  position: relative;
+  padding-bottom: 22.5rem;
+
+  &::before {
+    content: '';
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    background-image: url("../img/introimg.png");
+    z-index: 1;
+    top: 25rem;
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    content: '';
+    width: 35.8rem;
+    height: 10rem;
+    position: absolute;
+    background: url("../img/introimg2.png");
+    right: 16.5rem;
+    top: 60rem;
+  }
+}
+
+header {
+  padding-top: 7.3rem;
+  padding-bottom: 7.3rem;
+}
+
+.header__nav {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center
+}
+
+.header__nav-list {
+  @include reset-list;
+  display: flex;
+  margin-left: 8rem;
+  margin-right: auto;
+}
+.header__nav-item >a:hover {
+  color: #F67E7E;
+}
+.header__nav-item:first-child {
+  margin-right: 4rem;
+}
+
+.header__nav-btn {
+  padding: 1rem 3rem;
+  border: 2px solid #fff;
+  border-radius: 2.4rem;
+
+  &:hover {
+    color: #002529;
+    background-color: #fff;
+  }
+}
+
+.intro__words {
+  margin-top: 5.7rem;
+  display: flex;
+}
+
+.intro__words-main {
+  font-weight: bold;
+  font-size: 10rem;
+  width: 60rem;
+}
+
+.red {
+  color: #F67E7E;
+}
+
+.intro__words-info {
+  margin-left: auto;
+  width: 44.5rem;
+  font-size: 1.8rem;
+  padding-top: 13rem;
+  font-weight: 600;
+  position: relative;
+
+  &::before {
+    content: '';
+    top: 0;
+    background: #79C8C7;
+    position: absolute;
+    width: 5rem;
+    height: 4px;
+  }
+}
+
+.benefits {
+  background-color: #012F34;
+  padding-top: 20rem;
+  padding-bottom: 14rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 10rem;
+    height: 24.4rem;
+    background: url("../img/benefits.png");
+    right: 0;
+    top: 44rem;
+  }
+}
+
+.benefits__container {
+  display: flex;
+}
+
+.benefits__headword {
+  font-size: 4.8rem;
+  font-weight: bold;
+  width: 44.5rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    top: -54px;
+    background: #F67E7E;
+    position: absolute;
+    width: 5rem;
+    height: 4px;
+  }
+}
+
+.benefits__list {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+
+.benefits__list-item {
+  margin-bottom: 3.2rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -9.5rem;
+    width: 7.2rem;
+    height: 7.2rem;
+    background: url("../img/benefit1.png");
+  }
+
+  &:nth-child(2)::before {
+    background: url("../img/benefit2.png");
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+
+    &::before {
+      background: url("../img/benefit3.png");
+    }
+  }
+}
+
+.benefits__list-head {
+  color: #F67E7E;
+  line-height: 2.8rem;
+}
+
+.benefits__list-info {
+  font-weight: 600;
+  line-height: 2.5rem;
+  opacity: 0.8;
+  width: 44.5rem;
+  font-size: 1.5rem;
+  margin-top: 1.6rem;
+}
+
+.result {
+  padding-top: 14rem;
+  padding-bottom: 14rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 14.7rem;
+    height: 10rem;
+    background: url("../img/result1.png");
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20rem;
+    height: 10rem;
+    background: url("../img/result2.png");
+  }
+}
+
+.result__name {
+  font-size: 4.8rem;
+  font-weight: bold;
+  text-align: center;
+  width: 94.5rem;
+  margin: 0 auto;
+}
+
+.green {
+  color: #79C8C7
+}
+
+.result__list {
+  @include reset-list;
+  display: flex;
+  padding-top: 9.2rem;
+  text-align: center;
+}
+
+.result__list-item {
+  display: flex;
+  flex-direction: column;
+  margin-right: 3rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 6.7rem;
+    height: 5.6rem;
+    position: absolute;
+    top: -4rem;
+    left: 14rem;
+    background: url("../img/quote.png");
+    z-index: -1;
+  }
+
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.result__list-quote {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.result__list-name {
+  color: #79C8C7;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 2.4rem;
+}
+
+.result__list-info {
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.3rem;
+  margin-top: 2px;
+}
+
+.result__list-photo {
+  width: 6.2rem;
+  height: 6.2rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2px solid #79C8C7;
+  margin-top: 3.2rem;
+}
+
+.call {
+  padding-top: 7.6rem;
+  padding-bottom: 7.6rem;
+  background-color: #F67E7E;
+  color: #012F34;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 5.9rem;
+    width: 20rem;
+    height: 14.4rem;
+    background: url("../img/call.png");
+  }
+}
+
+.call__container {
+  display: flex;
+  align-items: center;
+}
+
+.call__headname {
+  font-family: 'Livvic', sans-serif;
+  font-size: 4.8rem;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.call__link {
+  color: #012F34;
+  padding: 1rem 3rem;
+  border: 2px solid #012F34;
+  border-radius: 2.4rem; 
+
+  &:hover {
+    color: #fff;
+    background-color:#012F34 ;
+  }
+}
+
+.footer {
+  padding-top: 4.8rem;
+  padding-bottom: 4.8rem;
+  background-color: #002529;
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+}
+
+.footer__list {
+  @include reset-list;
+  display: flex;
+  margin-top: 2.5rem;
+}
+
+.footer__list-item {
+  margin-right: 4rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.footer__list-link {
+  font-weight: 600;
+  font-size: 18px;
+
+  &:hover {
+    color: #F67E7E;
+  }
+}
+
+.footer__address {
+  font-weight: 600;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  width: 20rem;
+  margin-left: 12.5rem;
+  margin-right: auto;
+  line-height: 2.5rem;
+}
+
+.footer__social {
+  @include reset-list ;
+  display: flex;
+  margin-bottom: 5.1rem;
+  margin-left: 15rem;
+}
+.footer__social-item {
+  margin-right: 1.5rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.footer__social-logo {
+  fill: #fff;
+
+  &:hover {
+    fill: #F67E7E;
+  }
+}
+
+.footer__copywrite {
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
