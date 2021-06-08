@@ -257,6 +257,7 @@ header {
   @include reset-list;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 9.2rem;
   text-align: center;
 }
