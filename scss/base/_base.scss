@@ -31,6 +31,14 @@ body {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+
+  @include respond (tablet) {
+    max-width: 719px;
+  }
+
+  @include respond (mobile) {
+    max-width: 357px;
+  }
 }
 
 a {
@@ -62,17 +70,50 @@ a {
     right: 16.5rem;
     top: 60rem;
   }
+
+  @include respond (tablet) {
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        right: 20.6rem;
+      }
+  }
+
+  @include respond (mobile) {
+    padding-bottom: 20rem;
+
+    &::after {
+      right: auto;
+      top: auto;
+      bottom: 0;
+      left: 0;
+    }
+  }
 }
 
 header {
   padding-top: 7.3rem;
   padding-bottom: 7.3rem;
-}
 
+  @include respond (mobile) {
+    padding-top: 4.8rem;
+    padding-bottom: 8rem;
+  }
+}
+.header__container {
+  @include respond (mobile) {
+    display: flex;
+    align-items: center;
+  }
+}
 .header__nav {
   font-size: 1.8rem;
   display: flex;
-  align-items: center
+  align-items: center;
+
+ 
 }
 
 .header__nav-list {
@@ -80,6 +121,13 @@ header {
   display: flex;
   margin-left: 8rem;
   margin-right: auto;
+  @include respond (mobile) {
+    display: none;
+  }
+}
+
+.header__nav-list--active {
+  display: block;
 }
 .header__nav-item >a:hover {
   color: #F67E7E;
@@ -97,18 +145,96 @@ header {
     color: #002529;
     background-color: #fff;
   }
+
 }
+@media screen and (max-width: 700px) {
+  
+}
+.burger {
+  display: none;
+}
+.header__nav-logo {
+  display: inline-block;
+
+  @include respond (mobile) {
+    width: 12.8rem;
+    height: 3.2rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .burger {
+      display: block;
+      border: none;
+      padding: 0;
+      width: 20px;
+      background-color: transparent;
+      margin-left: auto;
+  }
+
+
+  .burger::before,
+  .burger__inner,
+  .burger::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 4px;     
+      background-color: #fff;
+      margin-bottom: 3px;
+  }
+
+  .burger::after {
+      margin-bottom: 0;
+  }
+
+  .burger--active .burger__inner {
+      display: none;
+  }
+
+  .burger--active::before {
+      transform: rotate(45deg);
+      margin-bottom: 0;
+      position: relative;
+      top: 4px;
+  }
+
+  .burger--active::after {
+      transform: rotate(-45deg);
+  }
+}
+
 
 .intro__words {
   margin-top: 5.7rem;
   display: flex;
   justify-content: space-between;
+
+  @include respond (tablet) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @include respond (mobile) {
+    margin-top: 0;
+  }
 }
 
 .intro__words-main {
   font-weight: bold;
   font-size: 10rem;
   width: 60rem;
+
+  @include respond (tablet) {
+    font-size: 6.4rem;
+    width: 35rem;
+    margin: 0 auto;
+    margin-bottom: 2.4rem;
+  }
+
+  @include respond (mobile) {
+    font-size: 4rem;
+    width: 22rem;
+  }
 }
 
 .red {
@@ -130,6 +256,21 @@ header {
     width: 5rem;
     height: 4px;
   }
+
+  @include respond (tablet) {
+    &::before {
+      display: none;
+    }
+    font-size: 1.5rem;
+    width: 45.7rem;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  @include respond (mobile) {
+    width: 32.7rem;
+    line-height: 2.8rem;
+  }
 }
 
 .benefits {
@@ -147,10 +288,24 @@ header {
     right: 0;
     top: 44rem;
   }
+
+  @include respond (tablet) {
+    &::after {
+      top: 0;
+    }
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
 }
 
 .benefits__container {
   display: flex;
+
+  @include respond (tablet) {
+    flex-direction: column;
+    width: 57.3rem;
+    margin: 0 auto;
+  }
 }
 
 .benefits__headword {
@@ -166,6 +321,18 @@ header {
     position: absolute;
     width: 5rem;
     height: 4px;
+  }
+
+  @include respond(tablet) {
+    &::before {
+      top:-32px;
+    }
+    margin-bottom: 6.4rem;
+    font-size: 3.2rem
+  }
+
+  @include respond (mobile) {
+    width: 20rem;
   }
 }
 
@@ -200,6 +367,17 @@ header {
       background: url("../img/benefit3.png");
     }
   }
+
+  @include respond (mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &::before {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
 }
 
 .benefits__list-head {
@@ -214,6 +392,11 @@ header {
   width: 44.5rem;
   font-size: 1.5rem;
   margin-top: 1.6rem;
+
+  @include respond (mobile) {
+    width: 32.7rem;
+    text-align: center;
+  }
 }
 
 .result {
@@ -239,6 +422,10 @@ header {
     height: 10rem;
     background: url("../img/result2.png");
   }
+
+  @include respond (tablet) {
+    padding-top: 10rem;
+  }
 }
 
 .result__name {
@@ -247,6 +434,16 @@ header {
   text-align: center;
   width: 94.5rem;
   margin: 0 auto;
+
+  @include respond (tablet) {
+    font-size: 3.2rem;
+    width: 48rem;
+  }
+
+  @include respond (mobile) {
+    width: 32.7rem;
+    margin-top: 4rem;
+  }
 }
 
 .green {
@@ -260,6 +457,10 @@ header {
   align-items: center;
   padding-top: 9.2rem;
   text-align: center;
+
+  @include respond (tablet) {
+    flex-direction: column;
+  }
 }
 
 .result__list-item {
@@ -278,13 +479,30 @@ header {
     z-index: -1;
   }
 
-
+  @include respond (tablet) {
+    &::before {
+      left: calc( 50% - 35px);
+    }
+    margin-bottom: 4.8em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .result__list-quote {
   font-size: 1.5rem;
   font-weight: 600;
   width: 35rem;
+
+  @include respond (tablet) {
+    width: 57.3rem;
+  }
+
+  @include respond (mobile) {
+    width: 32.7rem;
+    line-height: 2.5rem;
+  }
 }
 
 .result__list-name {
@@ -325,11 +543,28 @@ header {
     height: 14.4rem;
     background: url("../img/call.png");
   }
+
+  @include respond (tablet) {
+    &::before {
+      top: auto;
+      bottom: 0;
+    }
+    padding-top: 9.5rem;
+    padding-bottom: 9.5rem;
+  }
 }
 
 .call__container {
   display: flex;
   align-items: center;
+
+  @include respond (tablet) {
+    width: 57.3rem;
+  }
+
+  @include respond (mobile) {
+    flex-direction: column;
+  }
 }
 
 .call__headname {
@@ -337,10 +572,22 @@ header {
   font-size: 4.8rem;
   font-weight: bold;
   margin-right: auto;
+
+  @include respond (tablet) {
+    font-size: 3.2rem;
+  }
+
+  @include respond (mobile) {
+    width: 22.7rem;
+    text-align: center;
+    margin: 0;
+  }
 }
 
 .call__link {
   color: #012F34;
+  font-size: 1.8rem;
+  font-weight: bold;
   padding: 1rem 3rem;
   border: 2px solid #012F34;
   border-radius: 2.4rem; 
@@ -349,19 +596,51 @@ header {
     color: #fff;
     background-color:#012F34 ;
   }
+
+  @include respond (mobile) {
+    margin-top: 2.4rem;
+    margin-bottom: 5px;
+  }
 }
 
 .footer {
   padding-top: 4.8rem;
   padding-bottom: 4.8rem;
   background-color: #002529;
+
+  @include respond (mobile) {
+    padding-bottom: 16rem;
+  }
 }
 
 .footer__container {
   display: flex;
   align-items: center;
-}
 
+  @include respond (tablet) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @include respond (mobile) {
+    flex-direction: column;
+  }
+}
+.footer__logo {
+  @include respond (tablet) {
+    width: 10rem;
+    height: 2.4rem;
+    display: inline-block;
+  }
+}
+.footer__nav {
+  @include respond (tablet) {
+    margin-right: auto;
+  }
+  @include respond (mobile) {
+    margin: 0;
+  }
+}
 .footer__list {
   @include reset-list;
   display: flex;
@@ -374,6 +653,15 @@ header {
   &:last-child {
     margin-right: 0;
   }
+  @include respond (tablet) {
+    &:first-child {
+      margin-right: 2.4rem;
+    }
+  }
+
+  @include respond (mobile) {
+    margin: 0;
+  }
 }
 
 .footer__list-link {
@@ -382,6 +670,9 @@ header {
 
   &:hover {
     color: #F67E7E;
+  }
+  @include respond (tablet) {
+    font-size: 1.5rem;
   }
 }
 
@@ -393,13 +684,46 @@ header {
   margin-left: 12.5rem;
   margin-right: auto;
   line-height: 2.5rem;
-}
 
+  @include respond (tablet) {
+    margin: 0;
+    text-align: right;
+    margin-left: 30.5rem;
+  }
+  @include respond (mobile) {
+    text-align: center;
+    margin: 0;
+    margin-top: 2.4rem;
+  }
+}
+.footer__words {
+  display: flex;
+  flex-direction: column;
+  @include respond (tablet) {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  @include respond (mobile) {
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+}
 .footer__social {
   @include reset-list ;
   display: flex;
   margin-bottom: 5.1rem;
   margin-left: 15rem;
+
+  @include respond (tablet) {
+    margin: 0;
+    margin-right: 33rem;
+  }
+
+  @include respond (mobile) {
+    margin: 0;
+  }
 }
 .footer__social-item {
   margin-right: 1.5rem;
@@ -407,6 +731,7 @@ header {
   &:last-child {
     margin-right: 0;
   }
+  
 }
 .footer__social-logo {
   fill: #fff;
@@ -419,4 +744,8 @@ header {
 .footer__copywrite {
   font-size: 1.5rem;
   opacity: 0.6;
+
+  @include respond (mobile){
+    margin-top: 1.6rem;
+  }
 }

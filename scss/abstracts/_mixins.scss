@@ -18,3 +18,29 @@
   margin: 0;
   list-style: none;
 }
+
+@mixin respond ($break) {
+  @if ($break == mobile) {
+    @media screen and (max-width: 700px) {
+      @content;
+    }
+  }
+
+  @if ($break == tablet) {
+    @media screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  // @if ($break == labtop) {
+  //   @media screen and (max-width: 1200px) {
+  //     @content;
+  //   }
+  // }
+
+  @if ($break == big) {
+    @media screen and (min-width: 1920px) {
+      @content;
+    }
+  }
+}
