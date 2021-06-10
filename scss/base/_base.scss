@@ -112,29 +112,54 @@ header {
 }
 .header__nav {
   font-size: 1.8rem;
-  display: flex;
-  align-items: center;
 
   @include respond (mobile) {
+    display: none;
     position: absolute;
-    top: 11.2rem;
+    left: 0;
+    top: 0;
     width: 100%;
-    height: calc(100vh - 100px);
-    
-    flex-direction: column;   
-    background-color: rgba(44, 98, 105, 1);
-    z-index: 3;
+    height: 100vh;
+   
+    background-color: rgba(44, 98, 105, 0.75);
     &::before {
       content: '';
-      width: 30%;
+      width: 70%;
       height: 100%;
       position: absolute;
       top: 0;
-      left: 0;
-      opacity: 0.75;
+      right: 0;
+      background-color: rgba(44, 98, 105, 1);
       z-index: 2;
     }
+
+    &::after {
+      content: '';
+      width: 10rem;
+      height: 20rem;
+      position: absolute;
+      background-image: url("../img/burger.png");
+      right: 0;
+      bottom: 0;
+      z-index: 3;
+    }
   }
+}
+
+.header__nav--active {
+  display: block;
+}
+.header__nav-container {
+  display: flex;
+  align-items: center; 
+  @include respond (mobile) {
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+    margin-top: 11.2rem;
+    margin-left: 4.8rem;
+  }
+ 
 }
 
 .header__nav-list {
@@ -152,7 +177,15 @@ header {
   }
   
 }
+.header__nav-item {
+  @include respond (mobile) {
+    margin-bottom: 2.4rem;
 
+    &:last-child {
+      margin-bottom: 3.6rem;
+    }
+  }
+}
 .header__nav-list--active {
   display: block;
 }
@@ -216,6 +249,7 @@ header {
 
   .burger--active .burger__inner {
       display: none;
+      
   }
 
   .burger--active::before {
@@ -223,10 +257,13 @@ header {
       margin-bottom: 0;
       position: relative;
       top: 4px;
+      z-index: 4;
   }
 
   .burger--active::after {
       transform: rotate(-45deg);
+      position: relative;
+      z-index: 4;
   }
 }
 
