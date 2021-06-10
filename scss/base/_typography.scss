@@ -1,0 +1,70 @@
+.hero {
+    padding-bottom: 20rem;
+    
+}
+
+.hero__words {
+    display: flex;
+    margin-top: 10rem;
+    &::after {
+        content: '';
+        width: 10rem;
+        height: 20rem;
+        position: absolute;
+        background: url("../img/hero.png");
+        right: 0;
+        bottom: 6rem;
+      }
+}
+
+.hero__words-main {
+    font-size: 6.4rem;
+    width: 35rem;
+    margin-left: 3rem;
+}
+
+.hero__words-info {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2.8rem;
+    width: 73rem;
+    padding-top: 13rem;
+    position: relative;
+
+  &::before {
+    content: '';
+    top: 0;
+    background: #F67E7E;
+    position: absolute;
+    width: 5rem;
+    height: 4px;
+  }
+}
+.directors {
+    background-color: #004047;
+}
+.directors__name {
+    padding-top: 14rem;
+    text-align: center;
+    font-size: 4.8rem;
+    margin-bottom: 6.4rem;
+}
+.directors__list {
+    @include reset-list ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.directors__list-item {
+    width: 35rem;
+    position: relative;
+    z-index: 1;
+    margin-right: 3rem;
+    background-color: #012F34;
+    margin-bottom: 7.6rem;
+
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+}
