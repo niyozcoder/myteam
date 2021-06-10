@@ -103,6 +103,8 @@ header {
   }
 }
 .header__container {
+  display: flex;
+  align-items: center;
   @include respond (mobile) {
     display: flex;
     align-items: center;
@@ -113,17 +115,42 @@ header {
   display: flex;
   align-items: center;
 
- 
+  @include respond (mobile) {
+    position: absolute;
+    top: 11.2rem;
+    width: 100%;
+    height: calc(100vh - 100px);
+    
+    flex-direction: column;   
+    background-color: rgba(44, 98, 105, 1);
+    z-index: 3;
+    &::before {
+      content: '';
+      width: 30%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.75;
+      z-index: 2;
+    }
+  }
 }
 
 .header__nav-list {
   @include reset-list;
   display: flex;
   margin-left: 8rem;
-  margin-right: auto;
-  @include respond (mobile) {
-    display: none;
+  margin-right: 55.7rem;
+
+  @include respond (tablet) {
+    margin-right: 15rem;
   }
+
+  @include respond (mobile) {
+    flex-direction: column;
+  }
+  
 }
 
 .header__nav-list--active {
