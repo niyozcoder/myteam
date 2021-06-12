@@ -1,0 +1,146 @@
+
+
+.contact__list {
+    @include reset-list;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__headname {
+    font-size: 64px;
+    line-height: 100px;
+}
+
+.contact__words-info {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 48px;
+    color: #F67E7E;
+    margin-bottom: 4rem;
+}
+
+.contact__list-item {
+    position: relative;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+
+    &::before {
+        content: '';
+        width: 7.2rem;
+        height: 7.2rem;
+        background: url("../img/benefit1.png");
+    }
+
+    &:nth-child(2)::before {
+        background: url("../img/benefit2.png");
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+
+        &::before {
+            background: url("../img/benefit3.png");
+        }
+    }
+}
+
+.contact__list-name {
+    margin-left: 2.3rem;
+}
+
+textarea {
+    resize: none;
+    width: 54rem;
+    height: 8.4rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 2.4rem;
+
+    &::placeholder {
+        color: #fff;
+        opacity: 0.6;
+    }
+
+    &:valid {
+        border-bottom: 1px solid #79C8C7;
+        color: #fff;
+    }
+    &:invalid {
+        border-bottom: 1px solid red;
+    }
+   
+}
+
+.form__button {
+    color: #004047;
+    font-size: 18px;
+    line-height: 28px;
+    width: 123px;
+    height: 48px;
+    border-radius: 24px;
+    border: none;
+}
+input:invalid {
+    border-bottom: 1px solid red;
+
+    &::placeholder {
+        color: #F67E7E;
+        opacity: 0.6;
+    }
+}
+input {
+   
+    width: 54rem;
+    height: 4.2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 2.4rem;
+    &::placeholder {
+        color: #fff;
+        opacity: 0.6;
+    }
+
+    
+    &:focus {
+        border: none;
+        background-color: #002529;
+    }
+   
+    &:valid {
+        border-bottom: 1px solid #79C8C7;
+        color: #fff;
+    }
+
+}
+
+input[type="email"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+
+    
+    &:focus {
+        border: none;
+        background-color: #002529;
+    }
+    &:valid {
+        border-bottom: 1px solid #79C8C7;
+        color: #fff;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__form {
+    margin-top: 5rem;
+}
+
+.contact__container {
+    display: flex;
+    justify-content: space-between;
+}

@@ -23,9 +23,11 @@ body {
   font-size: 1.6rem;
   font-family: 'Livvic', sans-serif;
 }
+
 .body--active {
   overflow-y: hidden;
 }
+
 .container {
   width: 100%;
   max-width: 1140px;
@@ -74,13 +76,13 @@ a {
   }
 
   @include respond (tablet) {
-      &::before {
-        display: none;
-      }
+    &::before {
+      display: none;
+    }
 
-      &::after {
-        right: 20.6rem;
-      }
+    &::after {
+      right: 20.6rem;
+    }
   }
 
   @include respond (mobile) {
@@ -104,14 +106,17 @@ header {
     padding-bottom: 8rem;
   }
 }
+
 .header__container {
   display: flex;
   align-items: center;
+
   @include respond (mobile) {
     display: flex;
     align-items: center;
   }
 }
+
 .header__nav {
   font-size: 1.8rem;
 
@@ -122,8 +127,9 @@ header {
     top: 0;
     width: 100%;
     height: 100vh;
-   
+
     background-color: rgba(44, 98, 105, 0.75);
+
     &::before {
       content: '';
       width: 70%;
@@ -151,9 +157,11 @@ header {
 .header__nav--active {
   display: block;
 }
+
 .header__nav-container {
   display: flex;
-  align-items: center; 
+  align-items: center;
+
   @include respond (mobile) {
     flex-direction: column;
     position: relative;
@@ -161,7 +169,7 @@ header {
     margin-top: 11.2rem;
     margin-left: 4.8rem;
   }
- 
+
 }
 
 .header__nav-list {
@@ -177,8 +185,9 @@ header {
   @include respond (mobile) {
     flex-direction: column;
   }
-  
+
 }
+
 .header__nav-item {
   @include respond (mobile) {
     margin-bottom: 2.4rem;
@@ -188,12 +197,15 @@ header {
     }
   }
 }
+
 .header__nav-list--active {
   display: block;
 }
-.header__nav-item >a:hover {
+
+.header__nav-item>a:hover {
   color: #F67E7E;
 }
+
 .header__nav-item:first-child {
   margin-right: 4rem;
 }
@@ -209,12 +221,13 @@ header {
   }
 
 }
-@media screen and (max-width: 700px) {
-  
-}
+
+@media screen and (max-width: 700px) {}
+
 .burger {
   display: none;
 }
+
 .header__nav-logo {
   display: inline-block;
 
@@ -223,49 +236,50 @@ header {
     height: 3.2rem;
   }
 }
+
 @media screen and (max-width: 700px) {
   .burger {
-      display: block;
-      border: none;
-      padding: 0;
-      width: 20px;
-      background-color: transparent;
-      margin-left: auto;
+    display: block;
+    border: none;
+    padding: 0;
+    width: 20px;
+    background-color: transparent;
+    margin-left: auto;
   }
 
 
   .burger::before,
   .burger__inner,
   .burger::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 4px;     
-      background-color: #fff;
-      margin-bottom: 3px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    margin-bottom: 3px;
   }
 
   .burger::after {
-      margin-bottom: 0;
+    margin-bottom: 0;
   }
 
   .burger--active .burger__inner {
-      display: none;
-      
+    display: none;
+
   }
 
   .burger--active::before {
-      transform: rotate(45deg);
-      margin-bottom: 0;
-      position: relative;
-      top: 4px;
-      z-index: 4;
+    transform: rotate(45deg);
+    margin-bottom: 0;
+    position: relative;
+    top: 4px;
+    z-index: 4;
   }
 
   .burger--active::after {
-      transform: rotate(-45deg);
-      position: relative;
-      z-index: 4;
+    transform: rotate(-45deg);
+    position: relative;
+    z-index: 4;
   }
 }
 
@@ -327,6 +341,7 @@ header {
     &::before {
       display: none;
     }
+
     font-size: 1.5rem;
     width: 45.7rem;
     padding: 0;
@@ -359,6 +374,7 @@ header {
     &::after {
       top: 0;
     }
+
     padding-top: 10rem;
     padding-bottom: 10rem;
   }
@@ -391,8 +407,9 @@ header {
 
   @include respond(tablet) {
     &::before {
-      top:-32px;
+      top: -32px;
     }
+
     margin-bottom: 6.4rem;
     font-size: 3.2rem
   }
@@ -438,6 +455,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     &::before {
       position: relative;
       top: 0;
@@ -547,9 +565,11 @@ header {
 
   @include respond (tablet) {
     &::before {
-      left: calc( 50% - 35px);
+      left: calc(50% - 35px);
     }
+
     margin-bottom: 4.8em;
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -615,6 +635,7 @@ header {
       top: auto;
       bottom: 0;
     }
+
     padding-top: 9.5rem;
     padding-bottom: 9.5rem;
   }
@@ -656,11 +677,11 @@ header {
   font-weight: bold;
   padding: 1rem 3rem;
   border: 2px solid #012F34;
-  border-radius: 2.4rem; 
+  border-radius: 2.4rem;
 
   &:hover {
     color: #fff;
-    background-color:#012F34 ;
+    background-color: #012F34;
   }
 
   @include respond (mobile) {
@@ -692,6 +713,7 @@ header {
     flex-direction: column;
   }
 }
+
 .footer__logo {
   @include respond (tablet) {
     width: 10rem;
@@ -699,14 +721,17 @@ header {
     display: inline-block;
   }
 }
+
 .footer__nav {
   @include respond (tablet) {
     margin-right: auto;
   }
+
   @include respond (mobile) {
     margin: 0;
   }
 }
+
 .footer__list {
   @include reset-list;
   display: flex;
@@ -719,6 +744,7 @@ header {
   &:last-child {
     margin-right: 0;
   }
+
   @include respond (tablet) {
     &:first-child {
       margin-right: 2.4rem;
@@ -737,6 +763,7 @@ header {
   &:hover {
     color: #F67E7E;
   }
+
   @include respond (tablet) {
     font-size: 1.5rem;
   }
@@ -756,15 +783,18 @@ header {
     text-align: right;
     margin-left: 30.5rem;
   }
+
   @include respond (mobile) {
     text-align: center;
     margin: 0;
     margin-top: 2.4rem;
   }
 }
+
 .footer__words {
   display: flex;
   flex-direction: column;
+
   @include respond (tablet) {
     flex-direction: row;
     align-items: center;
@@ -776,8 +806,9 @@ header {
     margin-top: 4rem;
   }
 }
+
 .footer__social {
-  @include reset-list ;
+  @include reset-list;
   display: flex;
   margin-bottom: 5.1rem;
   margin-left: 15rem;
@@ -791,14 +822,16 @@ header {
     margin: 0;
   }
 }
+
 .footer__social-item {
   margin-right: 1.5rem;
 
   &:last-child {
     margin-right: 0;
   }
-  
+
 }
+
 .footer__social-logo {
   fill: #fff;
 
@@ -811,7 +844,7 @@ header {
   font-size: 1.5rem;
   opacity: 0.6;
 
-  @include respond (mobile){
+  @include respond (mobile) {
     margin-top: 1.6rem;
   }
 }
