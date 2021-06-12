@@ -1,4 +1,35 @@
+.contact__main {
+    position: relative;
+    &::before {
+        content: '';
+        width: 10rem;
+        height: 20rem;
+        position: absolute;
+        background-image: url("../img/directors.png");
+        background-repeat: no-repeat;
+    }
 
+    &::after {
+        content: '';
+        width: 10rem;
+        height: 22.5rem;
+        position: absolute;
+        background-image: url("../img/contacts.png");
+        bottom: 0;
+        right: 0;
+    } 
+
+    @include respond(mobile) {
+        &::before {
+            display: none;
+        }
+
+        &::after {
+            height: 112.5px;
+            width: 10rem;
+        }
+    }
+}
 
 .contact__list {
     @include reset-list;
@@ -9,6 +40,16 @@
 .contact__headname {
     font-size: 64px;
     line-height: 100px;
+
+    @include respond(tablet) {
+        text-align: center;
+    }
+
+    @include respond(mobile) {
+        font-size: 4rem;
+        line-height: 4rem;
+        margin-bottom: 1.6rem;
+    }
 }
 
 .contact__words-info {
@@ -17,6 +58,16 @@
     line-height: 48px;
     color: #F67E7E;
     margin-bottom: 4rem;
+
+
+    @include respond(tablet) {
+        text-align: center;
+    }
+    @include respond(mobile) {
+        font-size: 3.2rem;
+        margin: 0;
+        margin-bottom: 4rem;
+    }
 }
 
 .contact__list-item {
@@ -47,6 +98,9 @@
 
 .contact__list-name {
     margin-left: 2.3rem;
+    @include respond(mobile) {
+        width: 23.2rem;
+    } 
 }
 
 textarea {
@@ -67,8 +121,8 @@ textarea {
         border-bottom: 1px solid #79C8C7;
         color: #fff;
     }
-    &:invalid {
-        border-bottom: 1px solid red;
+    @include respond(mobile) {
+        width: 32.7rem;
     }
    
 }
@@ -82,7 +136,7 @@ textarea {
     border-radius: 24px;
     border: none;
 }
-input:invalid {
+input:not(:placeholder-shown):invalid ,textarea:not(:placeholder-shown):invalid {
     border-bottom: 1px solid red;
 
     &::placeholder {
@@ -113,6 +167,9 @@ input {
         border-bottom: 1px solid #79C8C7;
         color: #fff;
     }
+    @include respond(mobile) {
+        width: 32.7rem;
+    }
 
 }
 
@@ -129,6 +186,9 @@ input[type="email"] {
         border-bottom: 1px solid #79C8C7;
         color: #fff;
     }
+    @include respond(mobile) {
+        width: 32.7rem;
+    }
 }
 
 form {
@@ -143,4 +203,8 @@ form {
 .contact__container {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 12rem;
+    @include respond(tablet) {
+        flex-direction: column;
+    }
 }

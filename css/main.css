@@ -1865,6 +1865,39 @@ template {
   display: none;
 }
 
+.contact__main {
+  position: relative;
+}
+
+.contact__main::before {
+  content: '';
+  width: 10rem;
+  height: 20rem;
+  position: absolute;
+  background-image: url("../img/directors.png");
+  background-repeat: no-repeat;
+}
+
+.contact__main::after {
+  content: '';
+  width: 10rem;
+  height: 22.5rem;
+  position: absolute;
+  background-image: url("../img/contacts.png");
+  bottom: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .contact__main::before {
+    display: none;
+  }
+  .contact__main::after {
+    height: 112.5px;
+    width: 10rem;
+  }
+}
+
 .contact__list {
   padding: 0;
   margin: 0;
@@ -1883,12 +1916,40 @@ template {
   line-height: 100px;
 }
 
+@media screen and (max-width: 1200px) {
+  .contact__headname {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .contact__headname {
+    font-size: 4rem;
+    line-height: 4rem;
+    margin-bottom: 1.6rem;
+  }
+}
+
 .contact__words-info {
   font-weight: bold;
   font-size: 32px;
   line-height: 48px;
   color: #F67E7E;
   margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact__words-info {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .contact__words-info {
+    font-size: 3.2rem;
+    margin: 0;
+    margin-bottom: 4rem;
+  }
 }
 
 .contact__list-item {
@@ -1923,6 +1984,12 @@ template {
 
 .contact__list-name {
   margin-left: 2.3rem;
+}
+
+@media screen and (max-width: 700px) {
+  .contact__list-name {
+    width: 23.2rem;
+  }
 }
 
 textarea {
@@ -1960,8 +2027,10 @@ textarea:valid {
   color: #fff;
 }
 
-textarea:invalid {
-  border-bottom: 1px solid red;
+@media screen and (max-width: 700px) {
+  textarea {
+    width: 32.7rem;
+  }
 }
 
 .form__button {
@@ -1974,26 +2043,26 @@ textarea:invalid {
   border: none;
 }
 
-input:invalid {
+input:not(:placeholder-shown):invalid, textarea:not(:placeholder-shown):invalid {
   border-bottom: 1px solid red;
 }
 
-input:invalid::-webkit-input-placeholder {
+input:not(:placeholder-shown):invalid::-webkit-input-placeholder, textarea:not(:placeholder-shown):invalid::-webkit-input-placeholder {
   color: #F67E7E;
   opacity: 0.6;
 }
 
-input:invalid:-ms-input-placeholder {
+input:not(:placeholder-shown):invalid:-ms-input-placeholder, textarea:not(:placeholder-shown):invalid:-ms-input-placeholder {
   color: #F67E7E;
   opacity: 0.6;
 }
 
-input:invalid::-ms-input-placeholder {
+input:not(:placeholder-shown):invalid::-ms-input-placeholder, textarea:not(:placeholder-shown):invalid::-ms-input-placeholder {
   color: #F67E7E;
   opacity: 0.6;
 }
 
-input:invalid::placeholder {
+input:not(:placeholder-shown):invalid::placeholder, textarea:not(:placeholder-shown):invalid::placeholder {
   color: #F67E7E;
   opacity: 0.6;
 }
@@ -2037,6 +2106,12 @@ input:valid {
   color: #fff;
 }
 
+@media screen and (max-width: 700px) {
+  input {
+    width: 32.7rem;
+  }
+}
+
 input[type="email"] {
   border: none;
   border-bottom: 1px solid #fff;
@@ -2050,6 +2125,12 @@ input[type="email"]:focus {
 input[type="email"]:valid {
   border-bottom: 1px solid #79C8C7;
   color: #fff;
+}
+
+@media screen and (max-width: 700px) {
+  input[type="email"] {
+    width: 32.7rem;
+  }
 }
 
 form {
@@ -2073,5 +2154,15 @@ form {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-bottom: 12rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=main.css.map */
